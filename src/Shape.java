@@ -1,4 +1,4 @@
-abstract class Shape  {
+abstract class Shape implements Comparable<Shape>{
 
     private Point position;
     private static int numShapes;
@@ -9,7 +9,15 @@ abstract class Shape  {
         ++numShapes;
         setId(numShapes);
     }
-
+    public int compareTo(Shape shape){
+        if(computeArea() < shape.computeArea()) return -1;
+        else if(computeArea() > shape.computeArea()) return 1;
+        else{
+            if(getPerimeter() < shape.getPerimeter()) return -1;
+            else if(getPerimeter() > shape.getPerimeter()) return 1;
+            else return 0;
+        }
+    }
     public Point getPosition() {
         return position;
     }

@@ -11,6 +11,9 @@ public class Main {
         add(shapes);
         display(shapes);
         System.out.println(String.format("The total number of shapes created are: %d", Shape.getNumShapes()));
+        System.out.println("Ordered Shapes (Ascending): ");
+        Collections.sort(shapes);
+        display(shapes);
     }
     private static void add(ArrayList<Shape> shapes) {
         shapes.add(new Circle(new Point(200.0, 200.0), 50.0));
