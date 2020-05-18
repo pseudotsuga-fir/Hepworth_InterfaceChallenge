@@ -1,4 +1,6 @@
-abstract class Shape implements Comparable<Shape>{
+import processing.core.PApplet;
+
+abstract class Shape extends PApplet implements Comparable<Shape>{
 
     private Point position;
     private static int numShapes;
@@ -33,6 +35,8 @@ abstract class Shape implements Comparable<Shape>{
     public void setId(int id) {
         this.id = id;
     }
+
+    abstract public void draw(PApplet p);
     abstract public double computeArea();
     abstract public double getPerimeter();
 
